@@ -3,26 +3,26 @@ package modelo;
 import java.util.List;
 
 public class Alumno {
-	
-	private int rut;
+
+	private String rut;
 	private String nombre;
 	private List<Materia> materias;
 
-	public Alumno() {	
+	public Alumno() {
 	}
 
-	public Alumno(int rut, String nombre, List<Materia> materias) {
+	public Alumno(String rut, String nombre, List<Materia> materias) {
 		super();
 		this.rut = rut;
 		this.nombre = nombre;
 		this.materias = materias;
 	}
 
-	public int getRut() {
+	public String getRut() {
 		return rut;
 	}
 
-	public void setRut(int rut) {
+	public void setRut(String rut) {
 		this.rut = rut;
 	}
 
