@@ -4,25 +4,25 @@ import java.util.List;
 
 public class Alumno {
 	
-	private String rut;
+	private int rut;
 	private String nombre;
 	private List<Materia> materias;
 
 	public Alumno() {	
 	}
 
-	public Alumno(String rut, String nombre, List<Materia> materias) {
+	public Alumno(int rut, String nombre, List<Materia> materias) {
 		super();
 		this.rut = rut;
 		this.nombre = nombre;
 		this.materias = materias;
 	}
 
-	public String getRut() {
+	public int getRut() {
 		return rut;
 	}
 
-	public void setRut(String rut) {
+	public void setRut(int rut) {
 		this.rut = rut;
 	}
 
