@@ -3,7 +3,7 @@ package modelo;
 import java.util.List;
 
 public class Materia {
-	private String nombre;
+	private String nombres;
 	private List<Double> notas;
 
 	public Materia() {	
@@ -11,16 +11,16 @@ public class Materia {
 
 	public Materia(String nombre, List<Double> notas) {
 		super();
-		this.nombre = nombre;
+		this.nombres = nombre;
 		this.notas = notas;
 	}
 
 	public String getNombre() {
-		return nombre;
+		return nombres;
 	}
 
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		this.nombres = nombre;
 	}
 
 	public List<Double> getNotas() {
@@ -33,7 +33,7 @@ public class Materia {
 
 	@Override
 	public String toString() {
-		return "Materia [nombre=" + nombre + ", notas=" + notas + "]";
+		return "Materia [nombre=" + nombres + ", notas=" + notas + "]";
 	}
 
 }
