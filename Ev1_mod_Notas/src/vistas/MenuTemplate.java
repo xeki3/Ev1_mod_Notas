@@ -30,13 +30,13 @@ public abstract class  MenuTemplate {
 			crearAlumno();
 			break;
 		case 2:
-
+			
 			break;
 		case 3:
-
+			agregarMateria();
 			break;
 		case 4:
-
+			agregarNota();
 			break;
 		case 5:
 

@@ -2,7 +2,6 @@ package main;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import modelo.Alumno;
 import servicio.ArchivoServicioImp;
 import servicio.PromedioServicioImp;
@@ -16,7 +15,7 @@ public class Main {
 		Menu menu = new Menu();
 		menu.iniciarMenu();
 		
-		System.out.println("Alumnos print "+asi.getAlumnosACargar());
+		//System.out.println("Alumnos print "+asi.getAlumnosACargar());
 		
 //		Map<String, Alumno> datos = new HashMap<String, Alumno>();
 //
