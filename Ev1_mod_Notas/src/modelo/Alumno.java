@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Alumno {
@@ -11,7 +12,7 @@ public class Alumno {
 	public Alumno() {
 	}
 
-	public Alumno(String rut, String nombre, List<Materia> materias) {
+	public Alumno(String rut, String nombre, ArrayList<Materia> materias) {
 		super();
 		this.rut = rut;
 		this.nombre = nombre;
@@ -38,8 +39,8 @@ public class Alumno {
 		return materias;
 	}
 
-	public void setMaterias(List<Materia> materias) {
-		this.materias = materias;
+	public void setMaterias(List<Materia> materias2) {
+		this.materias = materias2;
 	}
 
 	@Override
