@@ -1,6 +1,6 @@
 package main;
 
-import modelo.ArchivoServicioImp;
+import servicio.ArchivoServicioImp;
 
 public class Main {
 
