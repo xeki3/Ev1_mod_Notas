@@ -9,14 +9,13 @@ import java.util.Scanner;
 
 public class ArchivoServicioImp implements IArchivoServicio{
 	private Scanner lector;
-	//private List<String> gen= new ArrayList<String>();
 	private List<Alumno> al = new ArrayList<Alumno>();
-	private List<Double> notas ;
-	private List<Materia> materias2 ;
-	private Map<String, Alumno> alumnos = new HashMap<String, Alumno>(); 
+	private List<Double> notas;
+	private List<Materia> materias2;
+	private Map<String, Alumno> alumnos = new HashMap<String, Alumno>();
 	int cont = 0;
 	@Override
-	public Map<String, Alumno> cargarDatos(String rutaArchivoNotas) {
+	public Map<String, Alumno> cargarDatos(String rutaArchivoNotas){
 		try {
 			File archivo = new File(rutaArchivoNotas);
 			String linea;
@@ -34,11 +33,11 @@ public class ArchivoServicioImp implements IArchivoServicio{
 				alumno =new Alumno();
 				alumno.setRut(datosPersona[0]);
 				alumno.setNombre(datosPersona[1]);
-				
+
 				materia = new Materia();
 				materia.setNombre(datosPersona[2]);
 				//System.out.println("Materia "+materia);
-				
+
 				if(cont==1||al.stream().filter(x->x.getRut().equals(rut)).count()<1) {
 					al.add(alumno);
 				}
@@ -71,25 +70,20 @@ public class ArchivoServicioImp implements IArchivoServicio{
 						//System.out.println("ALFinal "+al);
 					}
 				}
-			
 			}
 			lector.close();
 			//System.out.println("Se leyeron " + alumnos.size() + " Clientes");
-
 		} catch (Exception e) {
 			System.out.println(e.getMessage().toString());
 		}
-		
 		for(Alumno al3: al) {
 			alumnos.put(al3.getRut(), al3);
 		}
-
 		return alumnos;
 	}
-
 	@Override
 	public void ExportarDatos(Map<String, Alumno> alumnos, String rutaArchivoNotas) {
-		
+
 	}
 
 }
