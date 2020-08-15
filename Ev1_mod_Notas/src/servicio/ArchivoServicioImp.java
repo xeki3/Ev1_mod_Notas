@@ -11,12 +11,18 @@ import modelo.Alumno;
 import modelo.Materia;
 
 public class ArchivoServicioImp implements IArchivoServicio{
+	
+	private static List<Alumno> alumnosACargar;
+	
+	
 	private Scanner lector;
 	private List<Alumno> al = new ArrayList<Alumno>();
 	private List<Double> notas;
 	private List<Materia> materias2;
-	private Map<String, Alumno> alumnos = new HashMap<String, Alumno>();
+	private static Map<String, Alumno> alumnos = new HashMap<String, Alumno>();
 	int cont = 0;
+	
+	
 	@Override
 	public Map<String, Alumno> cargarDatos(String rutaArchivoNotas){
 		try {
@@ -82,11 +88,30 @@ public class ArchivoServicioImp implements IArchivoServicio{
 		for(Alumno al3: al) {
 			alumnos.put(al3.getRut(), al3);
 		}
+		ArchivoServicioImp.alumnosACargar = al;
 		return alumnos;
 	}
 	@Override
 	public void ExportarDatos(Map<String, Alumno> alumnos, String rutaArchivoNotas) {
 
 	}
+	
+	public static List<Alumno> getAlumnosACargar() {
+		return alumnosACargar;
+	}
+	public static void setAlumnosACargar(List<Alumno> alumnosACargar) {
+		ArchivoServicioImp.alumnosACargar = alumnosACargar;
+	}
+	public static Map<String, Alumno> getAlumnos() {
+		return alumnos;
+	}
+	public static void setAlumnos(Map<String, Alumno> alumnos) {
+		ArchivoServicioImp.alumnos = alumnos;
+	}
+	@Override
+	public String toString() {
+		return "ArchivoServicioImp [alumnosACargar=" + alumnosACargar + "]";
+	}
+	
 
 }
