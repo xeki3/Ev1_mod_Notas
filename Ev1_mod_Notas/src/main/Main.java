@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import modelo.Alumno;
+import servicio.AlumnoServicioImp;
 import servicio.ArchivoServicioImp;
 import servicio.PromedioServicioImp;
 
@@ -20,7 +21,10 @@ public class Main {
 		promedio.calcularPromedio(datos.get("17.423.112-4").getMaterias().get(0).getNotas());
 
 		// System.out.println(datos.get("17.423.112-4").getMaterias().get(0).getNotas());
-		System.out.println(promedio.calcularPromedio(datos.get("17.423.112-4").getMaterias().get(0).getNotas()));
+		//System.out.println(promedio.calcularPromedio(datos.get("17.423.112-4").getMaterias().get(0).getNotas()));
+		//System.out.println(asi.cargarDatos("notas.csv"));
+	AlumnoServicioImp ser=new AlumnoServicioImp();
+	ser.listarAlumnos(datos);
 	}
 
 }

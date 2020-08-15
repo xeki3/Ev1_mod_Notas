@@ -13,6 +13,6 @@ public interface IAlumnoServicio {
 
 	public ArrayList<Materia> materiasPorAlumno(String rutAlumno);
 
-	public Map<String, Alumno> listarAlumnos();
+	public void listarAlumnos(Map listaAlumnos);
 
 }
