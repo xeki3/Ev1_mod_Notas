@@ -40,7 +40,7 @@ public abstract class  MenuTemplate {
 			agregarNota();
 			break;
 		case 5:
-
+exportarDatos();
 			break;
 
 		default:

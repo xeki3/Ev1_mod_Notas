@@ -25,7 +25,21 @@ public class Menu extends MenuTemplate{
 
 	@Override
 	public void exportarDatos() {
-
+		int opcion ;
+		String nombreArchivo;
+		ArchivoServicioImp asi = new ArchivoServicioImp();
+		System.out.println("Escriba el nombre del archivo");
+		nombreArchivo = tec.nextLine();
+		System.out.println("1. TXT  \r\n" + 
+				"2. CSV  \r\n");
+		opcion = tec.nextInt();
+		tec.nextLine();
+		if(opcion==1) {
+			nombreArchivo+=".txt";
+		}else {
+			nombreArchivo+=".csv";
+		}
+		asi.ExportarDatos(ArchivoServicioImp.getAlumnos(), nombreArchivo);
 	}
 
 	@Override
@@ -58,7 +72,7 @@ public class Menu extends MenuTemplate{
 		System.out.println("1. MATEMATICA  \r\n" + 
 				"2. LENGUAJE  \r\n" + 
 				"3. CIENCIA \r\n" + 
-				" 4. HISTORIA  \r\n" + 
+				"4. HISTORIA  \r\n" + 
 				"");
 		opcionMateria= tec.nextInt();
 		tec.nextLine();
@@ -110,9 +124,6 @@ public class Menu extends MenuTemplate{
 		}
 		opcionMateria= tec.nextInt();
 		tec.nextLine();
-		//Materia materia = ArchivoServicioImp.getAlumnosACargar().get(opcionAl-1).getMaterias().get(opcionMateria-1);
-		//System.out.println("ESTA LA MATERIA "+ArchivoServicioImp.getAlumnos().get(rut).getMaterias().contains(materia));
-		//System.out.println("la materia que elegi "+ArchivoServicioImp.getAlumnos().get(rut).getMaterias().get(opcionMateria-1));
 		System.out.println("Ingrese nota");
 		nota = tec.nextDouble();
 		tec.nextLine();
