@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 import modelo.Alumno;
 import modelo.Materia;
+import vistas.Menu;
 
 public class ArchivoServicioImp implements IArchivoServicio{
 	
@@ -95,12 +96,11 @@ public class ArchivoServicioImp implements IArchivoServicio{
 	}
 	@Override
 	public void ExportarDatos(Map<String, Alumno> alumnos, String rutaArchivoNotas) {
-//		System.out.println(alumnos);
-//		System.out.println(rutaArchivoNotas);
+		PromedioServicioImp psi = new PromedioServicioImp();
+		Menu menu = new Menu();
 		
 		try {
             String ruta = rutaArchivoNotas;
-            String contenido = "Contenido de ejemplo";
             File file = new File(ruta);
             // Si el archivo no existe es creado
             if (!file.exists()) {
@@ -112,7 +112,7 @@ public class ArchivoServicioImp implements IArchivoServicio{
             	bw.write("Alumno: "+al.getRut()+"-"+al.getNombre());
             	bw.newLine();
             	for(Materia mt: al.getMaterias()) {
-            		bw.write("Materia: "+mt.getNombre());
+            		bw.write("Materia: "+mt.getNombre()+"-Promedio: "+psi.calcularPromedio(mt.getNotas()));
             		bw.newLine();
             	}
             	
@@ -122,6 +122,9 @@ public class ArchivoServicioImp implements IArchivoServicio{
         } catch (Exception e) {
             e.printStackTrace();
         }
+		System.out.println("Archivo creado en la carpeta fuente del proyecto");
+		
+		menu.iniciarMenu();
 	}
 	
 	public static List<Alumno> getAlumnosACargar() {
