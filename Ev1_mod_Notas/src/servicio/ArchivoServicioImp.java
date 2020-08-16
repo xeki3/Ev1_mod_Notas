@@ -1,6 +1,8 @@
 package servicio;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -93,7 +95,33 @@ public class ArchivoServicioImp implements IArchivoServicio{
 	}
 	@Override
 	public void ExportarDatos(Map<String, Alumno> alumnos, String rutaArchivoNotas) {
-
+//		System.out.println(alumnos);
+//		System.out.println(rutaArchivoNotas);
+		
+		try {
+            String ruta = rutaArchivoNotas;
+            String contenido = "Contenido de ejemplo";
+            File file = new File(ruta);
+            // Si el archivo no existe es creado
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            for(Alumno al: alumnos.values()) {
+            	bw.write("Alumno: "+al.getRut()+"-"+al.getNombre());
+            	bw.newLine();
+            	for(Materia mt: al.getMaterias()) {
+            		bw.write("Materia: "+mt.getNombre());
+            		bw.newLine();
+            	}
+            	
+            }
+            
+            bw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 	}
 	
 	public static List<Alumno> getAlumnosACargar() {
