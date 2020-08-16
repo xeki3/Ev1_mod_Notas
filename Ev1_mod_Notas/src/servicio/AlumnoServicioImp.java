@@ -39,10 +39,6 @@ public class AlumnoServicioImp implements IAlumnoServicio{
 		menu.iniciarMenu();
 	}
 
-	public ArrayList<Materia> materiasPorAlumno(String rutAlumno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void listarAlumnos(Map listaAlumnos) {
