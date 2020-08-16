@@ -144,4 +144,12 @@ public class Menu extends MenuTemplate{
 		this.archivoServicioImp = archivoServicioImp;
 	}
 
+	@Override
+	public void listarAlumnos() {
+		alumnoServicioImp=new AlumnoServicioImp();
+		archivoServicioImp=new ArchivoServicioImp();
+		alumnoServicioImp.listarAlumnos(archivoServicioImp.getAlumnos());
+		this.iniciarMenu();
+	}
+
 }
