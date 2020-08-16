@@ -11,6 +11,7 @@ public abstract class  MenuTemplate {
 	public abstract void agregarMateria();
 	public abstract void agregarNota();
 	public abstract void terminarPrograma();
+	public abstract void listarAlumnos();
 
 	public void iniciarMenu() {
 		scanner = new Scanner(System.in);
@@ -30,7 +31,7 @@ public abstract class  MenuTemplate {
 			crearAlumno();
 			break;
 		case 2:
-			
+			listarAlumnos();
 			break;
 		case 3:
 			agregarMateria();
